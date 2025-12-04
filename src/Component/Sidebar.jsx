@@ -78,27 +78,18 @@ export default function Sidebar( { menuOpen ,setMenuOpen, setDarkMode, darkMode 
     
 const menuItem = [
     {
-        link: "/dashboard",
+        link: "/",
         name: "Dashboard",
         icon: <HomeRounded />,
     },
     {
-        fun: () => { console.log("clicked") },
+         link: "/Search",
         name: "Search",
         icon: <SearchRounded />,
     },
-     {
-        fun: () => { console.log("clicked") },
-        name: "Communication ",
-        icon: <SpeakerGroupRounded />,
-    },
+  
     {
-        fun: () => { console.log("clicked") },
-        name: "Record Podcast",
-        icon: <RecordVoiceOverRounded />,
-    },
-    {
-        fun: () => { console.log("clicked") },
+        link: "/Favorites",
         name: "Favorites",
         icon: <FavoriteRounded />,
     },

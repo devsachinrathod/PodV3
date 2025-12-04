@@ -4,7 +4,7 @@ import { Menu as MenuIcon, PersonRounded } from "@mui/icons-material";
 
 const NavBardiv = styled.div`
 display: flex;
-justify-content: between;
+justify-content: space-between;
 height: 40px;
 padding: 16 40px;
 align-items: center;
@@ -21,21 +21,22 @@ backfrop-filter: blur(10px);
 const ButtonDiv = styled.div`
 display: flex;
 align-items: flex-end;
-justify-content: end;
+justify-content: ;
 gap: 8px;
-font-size: 54px;
+font-size: 14px;
 color: ${({ theme }) => theme.text_primary};
 cursor: pointer;
-margin-left:80px;
+padding: 18px 22px;
+
 `
-export default function Navbar() {
+export default function Navbar(menuOpen, setMenuOpen) {
     return (
         <NavBardiv>
-       <MenuIcon />
-       <ButtonDiv>
-        <PersonRounded/>
-        Waiting of 2026
-        </ButtonDiv>
+            <MenuIcon onCLick={() => setMenuOpen(true)} style={{ cursor: "pointer" }} />
+            <ButtonDiv>
+                <PersonRounded />
+                Login
+            </ButtonDiv>
         </NavBardiv>
     )
 }
