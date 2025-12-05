@@ -55,6 +55,7 @@ function Dashboard() {
                         style={{ TextDecoder: "none" }} to="/displaypodcast/popular">
                         <Span>Show all</Span></Link>
                 </Topic>
+                <Podcastcard></Podcastcard>
                 <Podcasts></Podcasts>
             </FilterContainer>
             <FilterContainer>
