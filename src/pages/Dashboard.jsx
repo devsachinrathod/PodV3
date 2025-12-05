@@ -44,6 +44,10 @@ cursor: pointer;
     font-size: 14px;
 `;
 const Podcasts = styled.div`
+display: flex;
+flex-wrap: wrap;
+gap: 14px;
+padding: 18px 6px;
 `;
 function Dashboard() {
     return (
@@ -55,8 +59,11 @@ function Dashboard() {
                         style={{ TextDecoder: "none" }} to="/displaypodcast/popular">
                         <Span>Show all</Span></Link>
                 </Topic>
-                <Podcastcard></Podcastcard>
-                <Podcasts></Podcasts>
+                <Podcasts>
+                    <Podcastcard></Podcastcard>
+                    <Podcastcard></Podcastcard>
+                    <Podcastcard></Podcastcard>
+                </Podcasts>
             </FilterContainer>
             <FilterContainer>
                 <Topic>
@@ -66,6 +73,8 @@ function Dashboard() {
                         <Span>Show all</Span></Link>
                 </Topic>
                 <Podcasts>
+                    <Podcastcard></Podcastcard>
+                    <Podcastcard></Podcastcard>
                     <Podcastcard></Podcastcard>
                 </Podcasts>
             </FilterContainer>

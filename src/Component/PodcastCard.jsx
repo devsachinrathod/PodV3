@@ -14,9 +14,15 @@ const Card = styled.div`
   height: auto;
   cursor: pointer;
   transition: transform 0.3s ease;
+  position: relative; /* Required to position PlayIcon */
 
   &:hover {
     transform: translateY(-4px);
+  }
+
+  &:hover div.play-icon {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
   }
 
   @media (max-width: 600px) {
@@ -103,8 +109,27 @@ const Views = styled.div`
   color: #555;
 `;
 const PlayIcon = styled.div`
-  
+  position: absolute;
+  top: 46%;
+  left: 85%;
+  transform: translate(-50%, -50%) scale(0.5);
+  width: 38px;
+  height: 38px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: #b40fd8ff;
+  color: #fff;
+  border-radius: 50%;
+
+  cursor: pointer;
+  opacity: 0;
+  transition: 0.3s ease-in-out;
+  z-index: 5;
 `;
+
 
 
 function PodcastDetails() {
@@ -129,15 +154,14 @@ function PodcastDetails() {
         </Creator>
         <Views>1.2K views</Views>
       </CardFooter>
-      <PlayIcon>
-        {
-          "video" === "video" ? (
-            <PlayArrow style={{ width: "28px", }}></PlayArrow>
-          ) : (
-            <Headphones style={{ width: "28px", }}></Headphones>
-          )
-        }
+      <PlayIcon className="play-icon">
+        {"video" === "video" ? (
+          <PlayArrow style={{ width: "28px" }} />
+        ) : (
+          <Headphones style={{ width: "28px" }} />
+        )}
       </PlayIcon>
+
     </Card>
   );
 }
